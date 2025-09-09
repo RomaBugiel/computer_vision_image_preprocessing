@@ -19,7 +19,7 @@ This repository contains a set of Jupyter notebooks that implement the full pipe
    - Generates overlays and probability heatmaps for quality control.
 
 3. **Label masks post-processing (UNet dataset preparation)**  
-   Notebook: `labels_to_unet_masks_pipeline.ipynb`  
+   Notebook: `mask_postprocessing_for_unet.ipynb`  
    - Processes manually refined ilastik label exports (`*_Labels.h5`).  
    - Fills unlabeled pixels (class 0) using nearest-neighbor interpolation.  
    - Applies morphological smoothing to reduce edge artifacts (dilution, erosion)  
