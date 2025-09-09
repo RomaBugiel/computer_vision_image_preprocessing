@@ -5,13 +5,13 @@ This repository contains a set of Jupyter notebooks that implement the full pipe
 ## Overview
 
 1. **Image normalization**  
-   Notebook: `image_normalization_pipeline.ipynb`  
+   Notebook: `tem_normalization_clahe_minmax.ipynb`  
    - Prepares raw microscopy images for downstream analysis.  
-   - Includes intensity normalization, resizing, and consistent formatting.  
+   - Includes intensity normalization (clahe, minmax)  
    - Ensures reproducibility and standardization of input data.
 
 2. **Probability maps post-processing**  
-   Notebook: `ilastik_postprocessing_pipeline.ipynb`  
+   Notebook: `ilastik_h5_to_mask.ipynb`  
    - Converts ilastik probability map outputs (`.h5`) into binary masks.  
    - Supports user-defined thresholds and class selection.  
    - Automatically scans directories for `.h5` files and matching raw images.  
@@ -22,7 +22,7 @@ This repository contains a set of Jupyter notebooks that implement the full pipe
    Notebook: `labels_to_unet_masks_pipeline.ipynb`  
    - Processes manually refined ilastik label exports (`*_Labels.h5`).  
    - Fills unlabeled pixels (class 0) using nearest-neighbor interpolation.  
-   - Applies morphological smoothing to reduce edge artifacts.  
+   - Applies morphological smoothing to reduce edge artifacts (dilution, erosion)  
    - Aligns raw images with masks, builds one-hot multi-label stacks (e.g., *GFM*, *carbonhole*, *undefined*).  
    - Saves paired datasets as images (`.png`) and compressed masks (`.npz`), ready for supervised training.  
    - Performs sanity checks to ensure non-overlapping classes and consistent pixel counts.
